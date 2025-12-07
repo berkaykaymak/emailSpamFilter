@@ -33,5 +33,14 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_
 
 feature_extractor = TfidfVectorizer(min_df=1, stop_words='english', lowercase='True')
 
+#min_def to check repetitive words
+#stop_words to ignore some common words
+#lowercase to standardization
 
+X_train_features = feature_extractor.fit_transform(X_train)
+X_test_features = feature_extractor.transform(X_test)
+
+#convert all data types to int
+
+Y_train= Y_train.astype('int')
 
